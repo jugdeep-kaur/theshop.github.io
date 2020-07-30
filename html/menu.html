@@ -1,0 +1,224 @@
+<!-- b.	Product page – 4 products with prices -->
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="../css/styles.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script> 
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
+<script type="text/javascript" src="../js/script.js"></script> 
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<title>The Coffee Club</title>
+
+<link href="jquery-ui.css" rel="stylesheet">
+	<style>
+	body{
+		font-family: "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+	.demoHeaders {
+		margin-top: 2em;
+	}
+	#dialog-link {
+		padding: .4em 1em .4em 20px;
+		text-decoration: none;
+		position: relative;
+	}
+	#dialog-link span.ui-icon {
+		margin: 0 5px 0 0;
+		position: absolute;
+		left: .2em;
+		top: 50%;
+		margin-top: -8px;
+	}
+	#icons {
+		margin: 0;
+		padding: 0;
+	}
+	#icons li {
+		margin: 2px;
+		position: relative;
+		padding: 4px 0;
+		cursor: pointer;
+		float: left;
+		list-style: none;
+	}
+	#icons span.ui-icon {
+		float: left;
+		margin: 0 4px;
+	}
+	.fakewindowcontain .ui-widget-overlay {
+		position: absolute;
+	}
+	select {
+		width: 200px;
+	}
+	</style>
+</head>
+<body>
+
+<header>
+  <img src="../image/cafeteria.jpg" width=150px height=150px alt="CafeImage">
+  <h2>The Coffee Club</h2>
+</header>
+<!-- This section contains the list of 4 products with their prices. -->
+<section>
+    <!-- c.	Use two different plugins of your choice ( for example accordions) -->
+<p>
+	<button id="dialog-link" class="ui-button ui-corner-all ui-widget" style="float: right;">
+		<i class='fas fa-shopping-cart' style='font-size:24px'></i>
+	</button>
+</p>
+
+
+<!-- i.	Make a shopping cart where you choose at least 2 different items . It should automatically take the prices of those 2 items and shows the total with the customer name and ID.  2.5 Marks  -->
+<!-- ui-dialog -->
+<div id="dialog" title="Shopping cart - John Smith (ID- 1001)">
+  <p id="purchased"></p>
+  <br>The total is $
+  <p id="total">0</p>
+</div>
+
+
+
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+
+
+$( "#dialog" ).dialog({
+	autoOpen: false,
+	width: 400,
+	buttons: [
+		{
+			text: "Ok",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		{
+			text: "Cancel",
+			click: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	]
+});
+
+// Link to open the dialog
+$( "#dialog-link" ).click(function( event ) {
+	$( "#dialog" ).dialog( "open" );
+	event.preventDefault();
+});
+
+
+
+// Hover states on the static widgets
+$( "#dialog-link, #icons li" ).hover(
+	function() {
+		$( this ).addClass( "ui-state-hover" );
+	},
+	function() {
+		$( this ).removeClass( "ui-state-hover" );
+	}
+);
+</script>
+  <article>
+	
+  <h2>Menu</h2>
+  <p>Checkout our exotic drinks:</p>
+
+  <div class="row">
+  <div class="column">
+    <div class="card">
+	  <h3>Coffee</h3>
+      <img src="../image/coffee.jpg" width=200px height=200px alt="coffeeImg">
+      <p><button id="button" onclick="buyCoffee();">Buy- $1.20</button></p>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <h3>Tea</h3>
+      <img src="../image/tea.jpg" width=200px height=200px alt="coffeeImg">
+      <p><button id="button2" onclick="buyTea();">Buy- $1.20</button></p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>Cold Coffee</h3>
+      <img src="../image/iced-coffee.jpg" width=200px height=200px alt="coffeeImg">
+      <p><button id="button3" onclick="buyColdCoffee();">Buy- $2.20</button></p>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <h3>Chocolate frappe</h3>
+      <img src="../image/frappe.jpeg" width=200px height=200px alt="coffeeImg">
+      <p><button id="button4" onclick="buyChocoFrappe();">Buy- $3.20</button></p>
+    </div>
+  </div>
+</div>
+
+<script>
+$( "#button" ).button();
+$( "#button-icon" ).button({
+	icon: "ui-icon-gear",
+	showLabel: false
+});
+$( "#button2" ).button();
+$( "#button-icon" ).button({
+	icon: "ui-icon-gear",
+	showLabel: false
+});
+$( "#button3" ).button();
+$( "#button-icon" ).button({
+	icon: "ui-icon-gear",
+	showLabel: false
+});
+$( "#button4" ).button();
+$( "#button-icon" ).button({
+	icon: "ui-icon-gear",
+	showLabel: false
+});
+function buyCoffee(){
+  alert("Coffee added to cart!");
+  document.getElementById("purchased").innerHTML=document.getElementById("purchased").innerHTML+"# Coffee - $1.20\n";
+  document.getElementById("total").innerHTML=(parseFloat(document.getElementById("total").innerHTML)+1.20).toFixed(2);
+}
+function buyTea(){
+  alert("Tea added to cart!");
+  document.getElementById("purchased").innerHTML=document.getElementById("purchased").innerHTML+"# Tea - $1.20\n";
+  document.getElementById("total").innerHTML= (parseFloat(document.getElementById("total").innerHTML)+1.20).toFixed(2);
+}
+function buyColdCoffee(){
+  alert("Cold Coffee added to cart!");
+  document.getElementById("purchased").innerHTML=document.getElementById("purchased").innerHTML+"# Cold Coffee - $2.20\n";
+  document.getElementById("total").innerHTML= (parseFloat(document.getElementById("total").innerHTML)+2.20).toFixed(2);
+}
+function buyChocoFrappe(){
+  alert("Chocolate Frappe added to cart!");
+  document.getElementById("purchased").innerHTML=document.getElementById("purchased").innerHTML+"# Chocolate Frappe - $3.20\n";
+  document.getElementById("total").innerHTML= (parseFloat(document.getElementById("total").innerHTML)+3.20).toFixed(2);
+}
+</script>
+  </article>
+</section>
+
+  <nav>
+   <div class="topnav">
+   <a href="index.html">Home</a>
+   <a href="menu.html">Menu</a>
+   <a href="combo.html">Combo Offers</a>
+   <a href="about.html">About</a>
+   </div>
+  </nav>
+<footer>
+  <p align="right">Contact us on +1 123 123 1234 <br> Email us at queries.cafeteria@cafe.ca</p>
+</footer>
+</body>
+</html>

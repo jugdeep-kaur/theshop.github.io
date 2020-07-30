@@ -1,0 +1,60 @@
+<!-- Web Technology II project by group 8 Members-->
+<!-- c0753753 Sayana Veliyil Renny, c0753714 Tulsi Babubhai Patel, c0753352 Sakshi Jain, c0753604 Jugdeep Kaur , c0752970 Shagun Sharma-->
+<!-- This is an internet site for a coffee shop called The Coffee Club -->
+
+<!--1.a.	Main page- Welcome page-  index page of the project -->
+
+<html>
+<head>
+<!-- h.	Your website must be dynamic where elements will change according to the device being used -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<link rel="stylesheet" href="../css/styles.css">
+<title>The Coffee Club</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script> 
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
+</head>
+<body>
+    <!-- j.	The layout of your website must be similar to https://untappd.com  marks  1.5 -->
+    <!-- a.	Your navigation bar must be at the bottom of your website
+    b.	Login button must be at the top right
+    c.	Register button must be at the top right
+ -->
+<header data-role="header">
+  <img id="coffeecup" src="../image/cafeteria.jpg" width=150px height=150px alt="CafeImage">
+  <button onclick="window.location.href='./register.html'" style="float: right;" class="button">Register</button>
+  <button onclick="window.location.href='./login.html'" style="float: right;" class="button">Login</button>&nbsp;
+	<h2>The Coffee Club</h2>
+</header>
+<!-- This is the only part of the layout where contents keep on changing -->
+<section> 
+  <article>
+	<table align="center">
+	<tr>
+	<td>
+	<img id="coffeecup" src="../image/coff1.jpg" width=800px height=350px alt="coffeeDay">
+	</td>
+	<td width=200px align="center">
+	<h3>Welcome to The Coffee Club!</h3>
+	<h5>We serve coffee only on days ending with 'y'.</h5>
+	</td>
+	</tr>
+	</table>
+  </article>
+</section>
+
+<!-- g.	All pages must be linked with each other by using a navigation bar -->
+<!-- a.	Your navigation bar must be at the bottom of your website -->
+  <nav>
+   <div class="topnav">
+   <a href="index.html">Home</a>
+   <a href="menu.html">Menu</a>
+   <a href="combo.html">Combo Offers</a>
+   <a href="about.html">About</a>
+   </div>
+  </nav>
+<footer data-role="footer" data-position="fixed">
+  <p align="right">Contact us on +1 123 123 1234 <br> Email us at queries.cafeteria@cafe.ca</p>
+</footer>
+</body>
+</html>

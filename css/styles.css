@@ -1,0 +1,173 @@
+/* a.	Use only external CSS */
+/* b.	Apply 20 different CSS properties to style your webpage */
+/* c.	Be creative some marks will be assigned to this */
+/* d.	Use six different @medias */
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Blackadder ITC;
+  font-size: 16px;
+  background-image: url("../image/coff3.jpg");
+}
+
+/* Style the header */
+header {
+  /* padding: 0px; */
+  text-align: center;
+  font-size: 60px;
+  color: #f7e5d2;
+  font-family: chiller;
+}
+header img{
+	 float: left;
+}
+
+
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #663300;
+  font-size: 25px;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #994f00;
+  color: black;
+}
+article {
+  float: left;
+  padding: 20px;
+  width: 100%;
+  font-family:Arial, Helvetica, sans-serif;
+  background-image: url("../image/coff2.jpg");
+  min-height: 300px; 
+}
+
+/* Clear floats after the columns */
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  /* background-image: url("../image/coff2.jpg"); */
+  background-color: #663300;
+  padding: 0px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+/* The image keeps on changing according to the screen size. */
+
+@media screen and (max-width: 300px){
+  #coffeecup{
+    width: 200px;
+    height: 90px;
+  }
+}
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 0px;
+  text-align: center;
+  background-color: #e9ddd2;
+}
+
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+  background-color: #663300;
+  color: #f7e5d2;
+  border: 2px solid #e7e7e7;
+}
+
+.capt{
+	background-color:grey;
+	width: 300px;
+	height:100px;
+	
+}
+
+#mainCaptcha{
+	position: relative;
+	left : 60px;
+	top: 5px;
+	
+}
+
+#refresh{
+	position:relative;
+	left:230px;
+	width:30px;
+	height:30px;
+	bottom:45px;
+	background-image: url(rpt.jpg);
+}
+
+#txtInput, #Button1{
+	position: relative;
+	left:40px;
+	bottom: 40px;
+}

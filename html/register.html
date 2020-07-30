@@ -1,0 +1,98 @@
+<!-- f.	Register page – minimum six text boxes -->
+<!-- g.	All pages must be linked with each other  -->
+
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="../css/styles.css">
+<title>The Coffee Club</title>
+<script type="text/javascript" src="../js/script.js"></script> 
+</head>
+<body onload="myFunctionCaptcha()">
+
+<header>
+  <img src="../image/cafeteria.jpg" width=150px height=150px alt="CafeImage">
+  <h2>The Coffee Club</h2>
+  <script>
+function myFunctionCaptcha() {
+	Captcha();
+}
+  </script>
+</header>
+
+<section>
+  <!-- The users can register here -->
+  <article>
+	<span align="center">
+	<h1>Register here</h1>
+	<!-- a.	Validate all of your forms input by using jQuery   -->
+	<form name="myForm" action="./confirmation.html" onsubmit="return validateForm()" >
+	<table align="center">
+	<tr>
+	<td>Full Name</td>
+	<td><input type="text" name="name"></td>
+	</tr>
+	<tr>
+	<td>Username</td>
+	<td><input type="text" name="uname"></td>
+	</tr>
+	<tr>
+	<td>Password</td>
+	<td><input type="password" name="pass"></td>
+	</tr><tr>
+	<td>Gender</td>
+	<td>
+	<input type="radio" name="gender" value="male"> Male<br>
+	<input type="radio" name="gender" value="female"> Female<br>
+	<input type="radio" name="gender" value="other"> Other
+    </td>
+	</tr><tr>
+	<td>Date Of Birth</td>
+	<td><input type="date" name="pass"></td>
+	</tr><tr>
+	<td>Email</td>
+	<td><input type="text" name="email"></td>
+	</tr>
+	<tr>
+	<td>Membership type</td>
+	<td>
+	<select>
+    <option value="basic">Basic free membership</option>
+    <option value="premium">Premium membership</option>
+    </select>
+	</td>
+	</tr>
+	<!-- b.	Validate that the user is not a robot by adding a challenge question for the user to answer before the can your signup. If the user enters the correct answer then the form gets submitted. If the user is wrong the user must not be able to submit the form until the answer is right.  -->
+	<tr>
+		<td>Verification captcha</td>
+		<td>
+				<div class="capt"> 
+						<h2 type="text" id="mainCaptcha"></h2>
+						<p><input type="button" id="refresh" onclick="Captcha();" value="Re"/></p>            <input type="text" id="txtInput"/>    
+						<input id="Button1" type="button" value="Check" onclick="alert(ValidCaptcha());"/>
+						</div>
+		</td>
+	</tr>
+	<tr>
+	<td colspan=2 align="center"><input type="submit" value="Register" ></td>
+	</tr>
+	</table>
+	</form>
+	</span>
+  </article>
+</section>
+
+  <nav>
+   <div class="topnav">
+   <a href="index.html">Home</a>
+   <a href="menu.html">Menu</a>
+   <a href="combo.html">Combo Offers</a>
+   <a href="about.html">About</a>
+   </div>
+  </nav>
+<footer>
+  <p align="right">Contact us on +1 123 123 1234 <br> Email us at queries.cafeteria@cafe.ca</p>
+</footer>
+</body>
+</html>
